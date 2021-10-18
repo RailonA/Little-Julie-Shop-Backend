@@ -1,11 +1,11 @@
 class User < ApplicationRecord
-  rolify
+#   rolify
   has_secure_password
 
-  after_initialize :set_default_role, if: :new_record?
+#   after_initialize :set_default_role, if: :new_record?
 
-  has_many :appointments
-  has_many :services, through: :appointments
+#   has_many :appointments
+#   has_many :services, through: :appointments
 
   validates :username,
             presence: true,
@@ -23,9 +23,9 @@ class User < ApplicationRecord
             on: :create
   # rubocop:enable Layout/LineLength
 
-  validates :roles, presence: true
+#   validates :roles, presence: true
 
-  def set_default_role
-    add_role(:normal)
-  end
+#   def set_default_role
+#     add_role(:normal)
+#   end
 end
