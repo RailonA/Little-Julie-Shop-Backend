@@ -6,6 +6,8 @@ ruby '3.0.1'
 gem 'active_model_serializers', '~> 0.10.12'
 gem 'active_storage_validations'
 gem 'administrate'
+gem 'administrate-field-active_storage', "0.1.8"
+gem 'image_processing'
 gem 'jwt'
 gem 'rack-cors'
 gem 'rolify'

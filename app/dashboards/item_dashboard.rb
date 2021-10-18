@@ -8,6 +8,7 @@ class ItemDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
+    itemPhoto: Field::ActiveStorage,
     itemPhoto_attachment: Field::HasOne,
     itemPhoto_blob: Field::HasOne,
     id: Field::Number,
@@ -24,17 +25,16 @@ class ItemDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-    itemPhoto_attachment
-    itemPhoto_blob
+    itemPhoto
     id
     itemName
   ].freeze
 
-  # SHOW_PAGE_ATTRIBUTES
+  # SHOW_PAGE_ATTRIBUTEITEMPHOTOS
+
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-    itemPhoto_attachment
-    itemPhoto_blob
+    itemPhoto
     id
     itemName
     itemPrice
@@ -47,8 +47,7 @@ class ItemDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    itemPhoto_attachment
-    itemPhoto_blob
+    itemPhoto
     itemName
     itemPrice
     itemDescription
