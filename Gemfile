@@ -4,12 +4,13 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.1'
 
 gem 'active_model_serializers', '~> 0.10.12'
-# gem 'administrate'
+gem 'active_storage_validations'
+gem 'administrate'
 gem 'jwt'
-# gem 'rolify'
+gem 'rack-cors'
+gem 'rolify'
 gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'simple_command'
-gem 'rack-cors'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
