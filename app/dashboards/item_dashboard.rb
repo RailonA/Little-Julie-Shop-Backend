@@ -1,4 +1,4 @@
-require "administrate/base_dashboard"
+require 'administrate/base_dashboard'
 
 class ItemDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
@@ -8,15 +8,13 @@ class ItemDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    itemPhoto: Field::ActiveStorage,
-    itemPhoto_attachment: Field::HasOne,
-    itemPhoto_blob: Field::HasOne,
+    itemPhoto: ItemPhotoField,
     id: Field::Number,
     itemName: Field::String,
     itemPrice: Field::String,
     itemDescription: Field::String,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES

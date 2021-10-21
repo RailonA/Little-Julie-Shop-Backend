@@ -8,6 +8,7 @@ gem 'active_storage_validations'
 gem 'administrate'
 gem 'administrate-field-active_storage', "0.1.8"
 gem 'image_processing'
+gem "mini_magick"
 gem 'jwt'
 gem 'rack-cors'
 gem 'rolify'
