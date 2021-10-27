@@ -7,6 +7,7 @@ gem 'active_model_serializers', '~> 0.10.12'
 gem 'active_storage_validations'
 gem 'administrate'
 gem 'administrate-field-active_storage', "0.1.8"
+gem 'cloudinary'
 gem 'image_processing'
 gem "mini_magick"
 gem 'jwt'

@@ -26,6 +26,7 @@ class ItemDashboard < Administrate::BaseDashboard
     itemPhoto
     id
     itemName
+    itemPrice
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTEITEMPHOTOS
