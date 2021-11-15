@@ -7,4 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 women = Category.create(name: 'Women')
 men = Category.create(name: 'Men')
-kid = Category.create(name: 'Kid')
+kids = Category.create(name: 'Kids')

@@ -9,7 +9,7 @@ class ItemDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     itemPhoto: ItemPhotoField,
-    category: Field::Select.with_options(collection: Category.all.map do |cat| [cat.name, cat.id] end),
+    category: Field::Select.with_options(collection: Category.roots.map do |cat| [cat.name, cat.id] end),
     id: Field::Number,
     itemName: Field::String,
     itemPrice: Field::String,
