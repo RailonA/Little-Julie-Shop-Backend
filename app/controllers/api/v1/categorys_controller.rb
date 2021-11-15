@@ -8,6 +8,6 @@ class Api::V1::CategorysController < ApplicationController
   private
 
   def user_params
-    params.require(:category).permit(:items)
+    params.require(:category).permit(:items, :name, :parent_id)
   end
 end

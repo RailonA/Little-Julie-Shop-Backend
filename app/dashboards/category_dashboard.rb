@@ -13,7 +13,8 @@ class CategoryDashboard < Administrate::BaseDashboard
     name: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    ancestry: Field::String,
+    parent_id: Field::Select.with_options(collection: Category.all.map do |cat| [cat.name, cat.id] end),
+    # ancestry: Field::String,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -24,17 +25,17 @@ class CategoryDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     id
     name
+    created_at
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-    items
     id
     name
     created_at
     updated_at
-    ancestry
+    parent_id
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -42,7 +43,7 @@ class CategoryDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
     name
-    ancestry
+    parent_id
   ].freeze
 
   # COLLECTION_FILTERS
