@@ -3,6 +3,7 @@
   %i(
     users
     items
+    categories
       ).each do |name|
         resources name, only: %i(index show new create edit update destroy)
         resources :roles, only:  %i(index, show)

@@ -1,6 +1,6 @@
-require 'administrate/base_dashboard'
+require "administrate/base_dashboard"
 
-class ItemDashboard < Administrate::BaseDashboard
+class CategoryDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -8,14 +8,12 @@ class ItemDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    itemPhoto: ItemPhotoField,
-    category: Field::Select.with_options(collection: Category.all.map do |cat| [cat.name, cat.id] end),
+    items: Field::HasMany,
     id: Field::Number,
-    itemName: Field::String,
-    itemPrice: Field::String,
-    itemDescription: Field::String,
+    name: Field::String,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime
+    updated_at: Field::DateTime,
+    ancestry: Field::String,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -24,36 +22,27 @@ class ItemDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-    itemPhoto
-    category
     id
-    itemName
-    itemPrice
+    name
   ].freeze
 
-  # SHOW_PAGE_ATTRIBUTEITEMPHOTOS
-
+  # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-    itemPhoto
-    category
+    items
     id
-    itemName
-    itemPrice
-    itemDescription
+    name
     created_at
     updated_at
+    ancestry
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    itemPhoto
-    category
-    itemName
-    itemPrice
-    itemDescription
+    name
+    ancestry
   ].freeze
 
   # COLLECTION_FILTERS
@@ -68,10 +57,10 @@ class ItemDashboard < Administrate::BaseDashboard
   #   }.freeze
   COLLECTION_FILTERS = {}.freeze
 
-  # Overwrite this method to customize how items are displayed
+  # Overwrite this method to customize how categories are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(item)
-  #   "Item ##{item.id}"
+  # def display_resource(category)
+  #   "Category ##{category.id}"
   # end
 end
