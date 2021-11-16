@@ -13,7 +13,7 @@ class CategoryDashboard < Administrate::BaseDashboard
     name: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    parent_id: Field::Select.with_options(collection: Category.roots.map do |category| [category.name, category.id] end),
+    parent_id: Field::Select.with_options(collection: Category.roots.map do |parent| [parent.name, parent.id] end),
     # ancestry: Field::String,
   }.freeze
 
