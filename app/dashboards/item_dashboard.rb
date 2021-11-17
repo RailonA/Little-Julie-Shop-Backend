@@ -11,7 +11,7 @@ class ItemDashboard < Administrate::BaseDashboard
     itemPhoto: ItemPhotoField,
     category: Field::Select.with_options(
       collection: Category.roots.flat_map do |parent|
-        parent.children.map(&:name)
+        parent.children.map { |child| [child.name, child.id] }
       end
     ),
     id: Field::Number,
