@@ -21,6 +21,8 @@
     namespace :v1 do
       resources :users, only: [:show, :create]
       resources :items, only: [:index]
+      resources :categories, only: [:index, :show]
+
       post 'login', to: 'sessions#create'
     end
   end
