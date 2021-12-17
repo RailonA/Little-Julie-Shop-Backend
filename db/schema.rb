@@ -76,8 +76,12 @@ ActiveRecord::Schema.define(version: 2021_12_17_180848) do
   end
 
   create_table "shoppingcarts", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "item_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["item_id"], name: "index_shoppingcarts_on_item_id"
+    t.index ["user_id"], name: "index_shoppingcarts_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -100,6 +104,6 @@ ActiveRecord::Schema.define(version: 2021_12_17_180848) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "categories", "items"
   add_foreign_key "items", "categories", column: "categories_id"
-  add_foreign_key "shppingcarts", "items"
-  add_foreign_key "shppingcarts", "users"
+  add_foreign_key "shoppingcarts", "items"
+  add_foreign_key "shoppingcarts", "users"
 end

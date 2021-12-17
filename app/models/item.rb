@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
   belongs_to :categories, foreign_key: :categories_id, class_name: 'Category'
- 
+
   has_many :shoppingcarts, dependent: :destroy
 
   has_one_attached :itemPhoto
