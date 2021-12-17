@@ -4,6 +4,7 @@
     users
     items
     categories
+    shoppingcarts
       ).each do |name|
         resources name, only: %i(index show new create edit update destroy)
         resources :roles, only:  %i(index, show)
@@ -22,6 +23,7 @@
       resources :users, only: [:show, :create]
       resources :items, only: [:index]
       resources :categories, only: [:index, :show]
+      resources :shoppingcart, only: [:index, :create]
 
       post 'login', to: 'sessions#create'
     end
