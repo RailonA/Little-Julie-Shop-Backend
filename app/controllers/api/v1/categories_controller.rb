@@ -9,9 +9,10 @@ class Api::V1::CategoriesController < ApplicationController
     render json: @category.to_json
   end
 
+
   private
 
-  def category_params
+  def user_params
     params.require(:category).permit(:items, :name, :parent_id)
   end
 end
