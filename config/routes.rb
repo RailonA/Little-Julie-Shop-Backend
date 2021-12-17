@@ -23,7 +23,7 @@
       resources :users, only: [:show, :create]
       resources :items, only: [:index]
       resources :categories, only: [:index, :show]
-      resources :shoppingcart, only: [:index, :create]
+      resources :shoppingcarts, only: [:index, :create]
 
       post 'login', to: 'sessions#create'
     end

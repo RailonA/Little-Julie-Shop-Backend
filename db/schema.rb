@@ -80,15 +80,6 @@ ActiveRecord::Schema.define(version: 2021_12_17_180848) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "shppingcarts", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "item_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["item_id"], name: "index_shppingcarts_on_item_id"
-    t.index ["user_id"], name: "index_shppingcarts_on_user_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "email"
