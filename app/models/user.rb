@@ -4,8 +4,8 @@ class User < ApplicationRecord
 
   after_initialize :set_default_role, if: :new_record?
 
-#   has_many :appointments
-#   has_many :services, through: :appointments
+  has_many :shoppingcarts
+  has_many :items, through: :shoppingcarts
 
   validates :username,
             presence: true,
