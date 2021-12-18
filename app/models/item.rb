@@ -3,8 +3,6 @@ class Item < ApplicationRecord
 
   has_one_attached :itemPhoto
 
-  has_many :shoppingcarts, dependent: :destroy
-
   has_many :shoppingcarts
   has_many :users, through: :shoppingcarts
 
