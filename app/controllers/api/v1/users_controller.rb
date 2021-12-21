@@ -1,9 +1,14 @@
 class Api::V1::UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    render json: @user.to_json
+    render json: @user.to_json(include: { shoppingcart: {
+                                 include: { item: {
+                                   only: %i[id category itemphoto itemname]
+                                 } },
+                                 only: %i[id user_id item_id]
+                               } })
   end
-
+  
   def create
     # rubocop:disable Style/RedundantBegin
     begin
