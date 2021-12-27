@@ -9,7 +9,6 @@ class Api::V1::CategoriesController < ApplicationController
     render json: @category.to_json
   end
 
-
   private
 
   def user_params

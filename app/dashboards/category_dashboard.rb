@@ -1,4 +1,4 @@
-require "administrate/base_dashboard"
+require 'administrate/base_dashboard'
 
 class CategoryDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
@@ -13,7 +13,7 @@ class CategoryDashboard < Administrate::BaseDashboard
     name: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    parent_id: Field::Select.with_options(collection: Category.roots.map do |parent| [parent.name, parent.id] end),
+    parent_id: Field::Select.with_options(collection: Category.roots.map { |parent| [parent.name, parent.id] })
     # ancestry: Field::String,
   }.freeze
 
