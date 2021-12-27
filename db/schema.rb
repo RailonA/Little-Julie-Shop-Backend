@@ -54,11 +54,13 @@ ActiveRecord::Schema.define(version: 2021_12_17_180848) do
   end
 
   create_table "items", force: :cascade do |t|
+    t.integer "categories_id"
     t.string "itemName", null: false
     t.string "itemPrice", null: false
     t.string "itemDescription"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["categories_id"], name: "index_items_on_categories_id"
   end
 
   create_table "roles", force: :cascade do |t|
@@ -100,6 +102,7 @@ ActiveRecord::Schema.define(version: 2021_12_17_180848) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "categories", "items"
+  add_foreign_key "items", "categories", column: "categories_id"
   add_foreign_key "shoppingcarts", "items"
   add_foreign_key "shoppingcarts", "users"
 end
