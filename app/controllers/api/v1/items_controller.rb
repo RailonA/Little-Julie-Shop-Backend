@@ -7,4 +7,10 @@ class Api::V1::ItemsController < ApplicationController
                                   }
                                 })
   end
+
+  private
+
+  def item_params
+    params.require(:item).permit(:itemPhoto, :category_id, :itemName, :itemPrice)
+  end
 end
