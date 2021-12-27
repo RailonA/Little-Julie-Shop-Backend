@@ -8,7 +8,7 @@ class Api::V1::UsersController < ApplicationController
                                  only: %i[id user_id item_id]
                                } })
   end
-  
+
   def create
     # rubocop:disable Style/RedundantBegin
     begin
