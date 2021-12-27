@@ -1,7 +1,7 @@
 class Api::V1::UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    render json: @user.to_json(include: { shoppingcart: {
+    render json: @user.to_json(include: { shoppingcarts: {
                                  include: { item: {
                                    only: %i[id category itemphoto itemname]
                                  } },

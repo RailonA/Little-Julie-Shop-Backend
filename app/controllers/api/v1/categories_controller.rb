@@ -12,6 +12,6 @@ class Api::V1::CategoriesController < ApplicationController
   private
 
   def user_params
-    params.require(:category).permit(:items, :name, :parent_id)
+    params.require(:category).permit(:item_id, :name, :parent_id)
   end
 end
