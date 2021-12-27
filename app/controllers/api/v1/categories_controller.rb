@@ -1,7 +1,7 @@
 class Api::V1::CategoriesController < ApplicationController
   def index
-    @categories = Category.all
-    render json: @categories
+    @category = Category.all
+    render json: @category
   end
 
   def show
@@ -12,6 +12,6 @@ class Api::V1::CategoriesController < ApplicationController
   private
 
   def user_params
-    params.require(:category).permit(:item_id, :name, :parent_id)
+    params.require(:category).permit(:items, :name, :parent_id)
   end
 end
