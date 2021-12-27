@@ -9,5 +9,5 @@ class Item < ApplicationRecord
   validates_presence_of :itemName,
                         :itemPrice,
                         :itemPhoto,
-                        :category_id
+                        :categories_id
 end
