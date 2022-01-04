@@ -24,7 +24,6 @@
       resources :items, only: [:index]
       resources :categories, only: [:index, :show]
       resources :shoppingcarts, only: [:index, :create]
-
       post 'login', to: 'sessions#create'
     end
   end
