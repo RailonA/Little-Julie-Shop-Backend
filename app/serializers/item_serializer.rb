@@ -1,4 +1,4 @@
-class ServiceSerializer < ActiveModel::Serializer
+class ItemSerializer < ActiveModel::Serializer
   attributes :id, :itemPhoto, :itemName, :itemPrice, :itemDescription, :category_id
 
   has_many :shoppingcarts
