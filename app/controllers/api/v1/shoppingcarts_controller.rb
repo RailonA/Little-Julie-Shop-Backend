@@ -1,4 +1,4 @@
-class Api::V1::ShoppingcartController < ApplicationController
+class Api::V1::ShoppingcartsController < ApplicationController
   before_action :authenticate, only: [:create]
 
   def index
